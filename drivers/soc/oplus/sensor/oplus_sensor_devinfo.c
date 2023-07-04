@@ -206,6 +206,7 @@ static void parse_proximity_sensor_dts(struct sensor_hw* hw, struct device_node 
 		"force_cali_limit",
 		"cali_jitter_limit",
 		"cal_offset_margin",
+		"esd_gpio_use"
 	};
 	rc = of_property_read_u32(ch_node, "ps-type", &value);
 
@@ -447,7 +448,8 @@ static void parse_cct_sensor_dts(struct sensor_hw *hw, struct device_node *ch_no
 		"fd-time",
 		"fac-cali-fd-time",
 		"first-fd-gain",
-		"fac-cali-fd-gain"
+		"fac-cali-fd-gain",
+		"algo-flag"
 	};
 
 	hw->feature.feature[0] = 1;/*default use decoupled driver oplus_cct */
@@ -528,7 +530,8 @@ static void parse_accelerometer_sensor_dts(struct sensor_hw *hw, struct device_n
 	int rc = 0;
 	int di = 0;
 	char *feature[] = {
-		"use-sois"
+		"use-sois",
+		"single-acc"
 	};
 
 	hw->feature.feature[0] = 0;/*default not use s-ois */
