@@ -60,6 +60,7 @@ delete note  and status = "disabled" to "ok"  add here also, other will meet can
 			fstab {
 				vendor {
 					fsmgr_flags = "wait,slotselect,avb";
+					type = "erofs";
 //#else
 					//fsmgr_flags = "wait,avb";
 				};
